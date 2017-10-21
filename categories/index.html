@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="lbw`s Blog">
 <meta property="og:description" content="lbw的个人博客，自己的一些心得体会和编程相关">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-10-17T06:28:51.350Z">
+<meta property="og:updated_time" content="2017-10-21T04:58:14.519Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="categories">
 <meta name="twitter:description" content="lbw的个人博客，自己的一些心得体会和编程相关">
@@ -292,45 +292,6 @@
 
 
           
-
-  
-  <div onclick="showGitment()" id="gitment_title" class="gitment_title">显示 Gitment 评论</div>
-  <div id="container" style="display:none"></div>
-  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
-  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-  <script>
-  const myTheme = {
-    render(state, instance) {
-      const container = document.createElement('div');
-      container.lang = "en-US";
-      container.className = 'gitment-container gitment-root-container';
-      container.appendChild(instance.renderHeader(state, instance));
-      container.appendChild(instance.renderEditor(state, instance));
-      container.appendChild(instance.renderComments(state, instance));
-      container.appendChild(instance.renderFooter(state, instance));
-      return container;
-    }
-  }
-  function showGitment() {
-    $("#gitment_title").attr("style", "display:none");
-    $("#container").attr("style", "").addClass("gitment_container");
-    var gitment = new Gitment({
-      id: window.location.pathname,
-      theme: myTheme,
-      owner: 'libowen0',
-      repo: 'libowen0.github.io',
-      oauth: {
-        client_id: 'fed68eb058ee54110837',
-        client_secret: 'f1a29909713d71cb4eb5c375a39dfe7937e1db52'
-      }
-    });
-    gitment.render('container');
-  }
-  </script>
-
-
-
-
         </div>
         
           
@@ -354,6 +315,10 @@
       <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://oxwv1c6nl.bkt.clouddn.com/avatar.jpg"
+                alt="lbw" />
             
               <p class="site-author-name" itemprop="name">lbw</p>
               <p class="site-description motion-element" itemprop="description">lbw的个人博客，自己的一些心得体会和编程相关</p>
@@ -383,6 +348,15 @@
               </div>
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -609,28 +583,6 @@
 
     
 
-    
-      <script type="text/javascript">
-      function renderGitment(){
-        var gitment = new Gitment({
-            id: window.location.pathname, 
-            owner: '',
-            repo: '',
-            
-            oauth: {
-            
-            
-                client_secret: 'f1a29909713d71cb4eb5c375a39dfe7937e1db52',
-            
-                client_id: 'fed68eb058ee54110837'
-            }});
-        gitment.render('gitment-container');
-      }
-
-      
-      renderGitment();
-      
-      </script>
     
 
 
