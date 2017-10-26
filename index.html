@@ -332,15 +332,15 @@
 
       
         
-          
-            <h3 id="1-Ioc"><a href="#1-Ioc" class="headerlink" title="1. Ioc"></a>1. Ioc</h3><p>IOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制<br>并且对象之间的依赖关系也交给容器来管理。</p>
-<p>优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。  </p>
-<h3 id="2-Ioc和DI"><a href="#2-Ioc和DI" class="headerlink" title="2. Ioc和DI"></a>2. Ioc和DI</h3><p>DI 依赖注入，指得是容器动态的将依赖关系注入到组件中属于IOC容器的功能。</p>
-<h3 id="3-详解Ioc容器"><a href="#3-详解Ioc容器" class="headerlink" title="3. 详解Ioc容器"></a>3. 详解Ioc容器</h3><p>Spring Ioc容器的代表的是org.springframework.beans包中的BeanFactory接口，提供了最基本功能<br>而实际开发使用的是org.springframework.context包下的ApplicationContext接口，他在基础之上扩展了功能用于企业级应用。ApplicationContext完全继承BeanFactory，因而BeanFactory所具有的语义也适用于ApplicationContext。<br><img src="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_02BeanFactory.png" alt="">  </p>
-<h4 id="3-1-根据不同路径来加载配置文件，并初始化容器"><a href="#3-1-根据不同路径来加载配置文件，并初始化容器" class="headerlink" title="3.1 根据不同路径来加载配置文件，并初始化容器"></a>3.1 根据不同路径来加载配置文件，并初始化容器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testClassPathXmlApplicationContext</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//1.准备配置文件，从当前类加载路径中获取配置文件</span></div><div class="line">        <span class="comment">//2.初始化容器</span></div><div class="line">        BeanFactory beanFactory = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"chapter2/classpath.xml"</span>);</div><div class="line">        <span class="comment">//2、从容器中获取Bean</span></div><div class="line">        HelloApi helloApi = beanFactory.getBean(<span class="string">"hello"</span>, HelloApi.class);</div><div class="line">        <span class="comment">//3、执行业务逻辑</span></div><div class="line">        helloApi.sayHello();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFileSystemApplicationContext</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//1.准备配置文件，从文件系统获取配置文件，默认是相对路径，可以指定绝对路径</span></div><div class="line">        <span class="comment">//2.初始化容器</span></div><div class="line">        BeanFactory beanFactory = <span class="keyword">new</span> FileSystemXmlApplicationContext(<span class="string">"fileSystemConfig.xml"</span>);</div><div class="line">        <span class="comment">//2、从容器中获取Bean</span></div><div class="line">        HelloApi helloApi = beanFactory.getBean(<span class="string">"hello"</span>, HelloApi.class);</div><div class="line">        <span class="comment">//3、执行业务逻辑</span></div><div class="line">        helloApi.sayHello();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>其中，值得注意的是<br>类加载路径指的是webapp下的<strong>classes文件夹</strong>，存放编译后的文件<br>文件系统路径指的是<strong>项目的根目录</strong></p>
-
-          
+          <h3 id="1-Ioc"><a href="#1-Ioc" class="headerlink" title="1. Ioc"></a>1. Ioc</h3><p>IOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制<br>并且对象之间的依赖关系也交给容器来管理。</p>
+<p>优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/24/Spring学习笔记（2）-IOC基础/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -457,33 +457,17 @@
 
       
         
-          
-            <blockquote>
+          <blockquote>
 <p>本系列是在学习Spring框架中的总结和记录<br>推荐开涛大神的博客系列<a href="[http://jinnianshilongnian.iteye.com/blog/1482071]">跟我学spring3</a></p>
 </blockquote>
-<h3 id="1-Spring是什么？"><a href="#1-Spring是什么？" class="headerlink" title="1. Spring是什么？"></a>1. Spring是什么？</h3><p>Spring 是开源轻量级JavaEE框架，用于简化企业级应用程序开发。  </p>
-<h3 id="2-Spring能帮我们做什么"><a href="#2-Spring能帮我们做什么" class="headerlink" title="2. Spring能帮我们做什么"></a>2. Spring能帮我们做什么</h3><ol>
-<li>传统开发，对象间的依赖关系由程序内部创建，加大了对象间的耦合程度，每次修改都需要重新编译，降低效率，而且不利于测试。<br><strong>Spring 内部的Ioc容器，可自动管理创建的Bean，依赖注入关系依照配置文件来组装。</strong></li>
-<li>传统开发在一些如，日志记录，权限控制大部分代码是重复的，每次添加功能都需要很多的重复代码  。<br><strong>Spring 面向切面编程能帮助我们无耦合的实现日志记录，性能统计，安全控制。</strong></li>
-<li>事务管理的简化，在传统数据库事务管理，每次都需要如“获取链接，执行SQL，提交或回滚事务，关闭链接”等一系列机械式的代码。<br><strong>Spring能非常简单的帮我们管理数据库事务。只需要获取链接执行SQL。</strong></li>
-<li><strong>Spring提供与第三方数据访问框架的无缝集成,而且自己也提供了一套JDBC访问模版，方便访问数据库。</strong></li>
-<li><strong>Spring还提供与第三方Web（如Struts、JSF）框架无缝集成，而且自己也提供了一套Spring MVC框架，来方便web层搭建。</strong></li>
-<li><strong>Spring能方便的与Java EE（如Java Mail、任务调度）整合，与更多技术整合（比如缓存框架）。</strong></li>
-</ol>
-<h3 id="3-Spring-基础"><a href="#3-Spring-基础" class="headerlink" title="3. Spring 基础"></a>3. Spring 基础</h3><h4 id="3-1-Spring架构图"><a href="#3-1-Spring架构图" class="headerlink" title="3.1 Spring架构图"></a>3.1 Spring架构图</h4><p><img src="http://oxwv1c6nl.bkt.clouddn.com/spring/springFrame.JPG" alt="">  </p>
-<p><strong>核心容器：Core、Beans、Context、EL模块</strong></p>
-<ul>
-<li><strong>Core模块</strong>：封装了框架的最底层部分，包括资源访问、类型转换及常用工具类。</li>
-<li><strong>Beans模块</strong>：提供了框架的基础部分，包括控制反转和依赖注入。其中BeanFactory是容器核心，本质是“工厂设计模式”的实现，且无序编程实现“单例设计模式”，单例完全由容器控制，而且提倡面向接口编程，而非面向实现编程。所有依赖关系交给框架管理。</li>
-<li><strong>Context模块</strong>：以Core和Beans为基础，集成Beans模块功能并添加资源绑定、数据验证、国际化<br>、JavaEE支持、容器生命周期、事件传播等；核心接口是ApplicationContext。 </li>
-<li><strong>EL模块</strong>:提供强大的表达式语言支持，支持访问和修改属性值，方法调用，支持访问及修改数组、容器和索引器，命名变量，支持算数和逻辑运算，支持从Spring 容器获取Bean，它也支持列表投影、选择和一般的列表聚合等。</li>
-</ul>
-<h4 id="3-2-典型应用场景"><a href="#3-2-典型应用场景" class="headerlink" title="3.2 典型应用场景"></a>3.2 典型应用场景</h4><p> Spring可以应用到许多场景，从最简单的标准Java SE程序到企业级应用程序都能使用Spring来构建。</p>
-<p> <strong>典型Web应用程序应用场景：</strong>  </p>
-<p><img src="http://oxwv1c6nl.bkt.clouddn.com/springPro.JPG" alt="">    </p>
-<p>在Web应用程序应用场景中，典型的三层架构，数据模型层实现域对象，数据访问层实现数据访问，<br>逻辑层实现业务逻辑，web层提供页面展示。所有组件都是由Spring进行管理，享受到Spring事务和AOP的好处，而且请求的唯一入口就是DispatcherServlet,它通过把请求映射到相应的web层组件来实现相应的请求功能。</p>
-
-          
+<h3 id="1-Spring是什么？"><a href="#1-Spring是什么？" class="headerlink" title="1. Spring是什么？"></a>1. Spring是什么？</h3>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/24/Spring学习笔记（1）-Spring概述/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>

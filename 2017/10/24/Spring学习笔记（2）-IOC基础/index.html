@@ -79,19 +79,19 @@
 
 
 
-<meta name="description" content="1. IocIOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制并且对象之间的依赖关系也交给容器来管理。 优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。   2. Ioc和DIDI 依赖注入，指得是容器动态的将依赖">
+<meta name="description" content="1. IocIOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制并且对象之间的依赖关系也交给容器来管理。 优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。">
 <meta name="keywords" content="Spring">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spring学习笔记（2）--IOC基础和基本原理">
 <meta property="og:url" content="http://yoursite.com/2017/10/24/Spring学习笔记（2）-IOC基础/index.html">
 <meta property="og:site_name" content="lbw`s Blog">
-<meta property="og:description" content="1. IocIOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制并且对象之间的依赖关系也交给容器来管理。 优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。   2. Ioc和DIDI 依赖注入，指得是容器动态的将依赖">
+<meta property="og:description" content="1. IocIOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制并且对象之间的依赖关系也交给容器来管理。 优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_02BeanFactory.png">
-<meta property="og:updated_time" content="2017-10-24T04:06:04.175Z">
+<meta property="og:updated_time" content="2017-10-26T07:58:53.255Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spring学习笔记（2）--IOC基础和基本原理">
-<meta name="twitter:description" content="1. IocIOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制并且对象之间的依赖关系也交给容器来管理。 优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。   2. Ioc和DIDI 依赖注入，指得是容器动态的将依赖">
+<meta name="twitter:description" content="1. IocIOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制并且对象之间的依赖关系也交给容器来管理。 优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。">
 <meta name="twitter:image" content="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_02BeanFactory.png">
 
 
@@ -333,7 +333,7 @@
 
       
         <h3 id="1-Ioc"><a href="#1-Ioc" class="headerlink" title="1. Ioc"></a>1. Ioc</h3><p>IOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制<br>并且对象之间的依赖关系也交给容器来管理。</p>
-<p>优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。  </p>
+<p>优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。<br><a id="more"></a></p>
 <h3 id="2-Ioc和DI"><a href="#2-Ioc和DI" class="headerlink" title="2. Ioc和DI"></a>2. Ioc和DI</h3><p>DI 依赖注入，指得是容器动态的将依赖关系注入到组件中属于IOC容器的功能。</p>
 <h3 id="3-详解Ioc容器"><a href="#3-详解Ioc容器" class="headerlink" title="3. 详解Ioc容器"></a>3. 详解Ioc容器</h3><p>Spring Ioc容器的代表的是org.springframework.beans包中的BeanFactory接口，提供了最基本功能<br>而实际开发使用的是org.springframework.context包下的ApplicationContext接口，他在基础之上扩展了功能用于企业级应用。ApplicationContext完全继承BeanFactory，因而BeanFactory所具有的语义也适用于ApplicationContext。<br><img src="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_02BeanFactory.png" alt="">  </p>
 <h4 id="3-1-根据不同路径来加载配置文件，并初始化容器"><a href="#3-1-根据不同路径来加载配置文件，并初始化容器" class="headerlink" title="3.1 根据不同路径来加载配置文件，并初始化容器"></a>3.1 根据不同路径来加载配置文件，并初始化容器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testClassPathXmlApplicationContext</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//1.准备配置文件，从当前类加载路径中获取配置文件</span></div><div class="line">        <span class="comment">//2.初始化容器</span></div><div class="line">        BeanFactory beanFactory = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"chapter2/classpath.xml"</span>);</div><div class="line">        <span class="comment">//2、从容器中获取Bean</span></div><div class="line">        HelloApi helloApi = beanFactory.getBean(<span class="string">"hello"</span>, HelloApi.class);</div><div class="line">        <span class="comment">//3、执行业务逻辑</span></div><div class="line">        helloApi.sayHello();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFileSystemApplicationContext</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//1.准备配置文件，从文件系统获取配置文件，默认是相对路径，可以指定绝对路径</span></div><div class="line">        <span class="comment">//2.初始化容器</span></div><div class="line">        BeanFactory beanFactory = <span class="keyword">new</span> FileSystemXmlApplicationContext(<span class="string">"fileSystemConfig.xml"</span>);</div><div class="line">        <span class="comment">//2、从容器中获取Bean</span></div><div class="line">        HelloApi helloApi = beanFactory.getBean(<span class="string">"hello"</span>, HelloApi.class);</div><div class="line">        <span class="comment">//3、执行业务逻辑</span></div><div class="line">        helloApi.sayHello();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
