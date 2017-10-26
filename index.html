@@ -333,7 +333,9 @@
       
         
           <h3 id="1-Ioc"><a href="#1-Ioc" class="headerlink" title="1. Ioc"></a>1. Ioc</h3><p>IOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制<br>并且对象之间的依赖关系也交给容器来管理。</p>
-<p>优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。<br>
+<p>优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。  </p>
+<h3 id="2-Ioc和DI"><a href="#2-Ioc和DI" class="headerlink" title="2. Ioc和DI"></a>2. Ioc和DI</h3><p>DI 依赖注入，指得是容器动态的将依赖关系注入到组件中属于IOC容器的功能。</p>
+<h3 id="3-详解Ioc容器"><a href="#3-详解Ioc容器" class="headerlink" title="3. 详解Ioc容器"></a>3. 详解Ioc容器</h3>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/24/Spring学习笔记（2）-IOC基础/#more" rel="contents">
@@ -406,7 +408,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/10/24/Spring学习笔记（1）-Spring概述/" itemprop="url">Spring学习笔记(1)--Spring概述</a></h1>
+                <a class="post-title-link" href="/2017/10/24/Spring学习笔记（1）-Spring概述/" itemprop="url">Spring学习笔记（1）--Spring概述</a></h1>
         
 
         <div class="post-meta">
@@ -460,7 +462,17 @@
           <blockquote>
 <p>本系列是在学习Spring框架中的总结和记录<br>推荐开涛大神的博客系列<a href="[http://jinnianshilongnian.iteye.com/blog/1482071]">跟我学spring3</a></p>
 </blockquote>
-<h3 id="1-Spring是什么？"><a href="#1-Spring是什么？" class="headerlink" title="1. Spring是什么？"></a>1. Spring是什么？</h3>
+<h3 id="1-Spring是什么？"><a href="#1-Spring是什么？" class="headerlink" title="1. Spring是什么？"></a>1. Spring是什么？</h3><p>Spring 是开源轻量级JavaEE框架，用于简化企业级应用程序开发。  </p>
+<h3 id="2-Spring能帮我们做什么"><a href="#2-Spring能帮我们做什么" class="headerlink" title="2. Spring能帮我们做什么"></a>2. Spring能帮我们做什么</h3><ol>
+<li>传统开发，对象间的依赖关系由程序内部创建，加大了对象间的耦合程度，每次修改都需要重新编译，降低效率，而且不利于测试。</li>
+</ol>
+<p><strong>Spring 内部的Ioc容器，可自动管理创建的Bean，依赖注入关系依照配置文件来组装。</strong></p>
+<ol>
+<li>传统开发在一些如，日志记录，权限控制大部分代码是重复的，每次添加功能都需要很多的重复代码  。<br><strong>Spring 面向切面编程能帮助我们无耦合的实现日志记录，性能统计，安全控制。</strong></li>
+<li>事务管理的简化，在传统数据库事务管理，每次都需要如“获取链接，执行SQL，提交或回滚事务，关闭链接”等一系列机械式的代码。<br><strong>Spring能非常简单的帮我们管理数据库事务。只需要获取链接执行SQL。</strong></li>
+<li><strong>Spring提供与第三方数据访问框架的无缝集成,而且自己也提供了一套JDBC访问模版，方便访问数据库。</strong></li>
+<li><strong>Spring还提供与第三方Web（如Struts、JSF）框架无缝集成，而且自己也提供了一套Spring MVC框架，来方便web层搭建。</strong></li>
+<li><strong>Spring能方便的与Java EE（如Java Mail、任务调度）整合，与更多技术整合（比如缓存框架）。</strong>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/2017/10/24/Spring学习笔记（1）-Spring概述/#more" rel="contents">
