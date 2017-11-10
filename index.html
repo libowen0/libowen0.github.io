@@ -411,7 +411,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/04/DI基础和配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/04/Spring学习笔记（3） -DI基础和配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lbw">
@@ -430,7 +430,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/11/04/DI基础和配置/" itemprop="url">Spring学习笔记（3）-- DI基础和配置</a></h1>
+                <a class="post-title-link" href="/2017/11/04/Spring学习笔记（3） -DI基础和配置/" itemprop="url">Spring学习笔记（3）-- DI基础和配置</a></h1>
         
 
         <div class="post-meta">
@@ -481,31 +481,20 @@
 
       
         
-          
-            <p>之后总结会尽量使用思维导图，更好的体现知识间关系。</p>
+          <p>之后总结会尽量使用思维导图，更好的体现知识间关系。</p>
 <p><img src="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_03DImind.png" alt="DImind">  </p>
 <p>Inversion of Control （控制反转），一般分为俩种类型：<strong>依赖注入和依赖查找</strong><br>一般使用依赖注入（Dependency Injection）方式来实现控制反转。</p>
 <h4 id="DI注入方式"><a href="#DI注入方式" class="headerlink" title="DI注入方式"></a>DI注入方式</h4><ol>
 <li>接口注入</li>
 <li>构造器注入</li>
-<li>Setter方式注入  </li>
-</ol>
-<p>接口注入Spring并不支持，基本上不会用到。<br>一般是类之间强联系才用构造器方式进行注入，而弱联系推荐使用的setter方式进行注入。</p>
-<h4 id="Spring配置元数据的方式"><a href="#Spring配置元数据的方式" class="headerlink" title="Spring配置元数据的方式"></a>Spring配置元数据的方式</h4><ol>
-<li>基于XML配置文件</li>
-<li>基于注解配置</li>
-<li>自动装配</li>
-</ol>
-<p>自动装配的方式官方推荐，可以大量减少代码量，但是在引入第三方服务的时候会有很大局限性。<br>注解装配，在类中遍布很多地方，会与源代码耦合。<br>XML方式，清晰的结构展示。<br>有必要的话，可以选择多种配置方法混合使用。</p>
-<h4 id="关于自动装配"><a href="#关于自动装配" class="headerlink" title="关于自动装配"></a>关于自动装配</h4><p>Spring从俩个角度实现自动化装配</p>
-<ul>
-<li>组件扫描（component scanning）:Spring会自动发现应用上下文创建的bean </li>
-<li>自动装配（autowiring）:Spring自动满足bean之间的依赖</li>
-</ul>
-<h5 id="开启组件扫描"><a href="#开启组件扫描" class="headerlink" title="开启组件扫描"></a>开启组件扫描</h5><p><code>&lt;context:compent-scan base-package=&quot;test&quot;</code>/&gt; 扫描基础包为test的组件</p>
-<h5 id="使用-autowired注解"><a href="#使用-autowired注解" class="headerlink" title="使用@autowired注解"></a>使用@autowired注解</h5><p>默认自动装配是会自动装配接口的实现类，但是同一个接口有多个实现类的话，就会抛出异常。<br>可以使用primary属性来限制自动装配结果。<br>也可以使用限定符</p>
-
-          
+<li>Setter方式注入
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/04/Spring学习笔记（3） -DI基础和配置/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
