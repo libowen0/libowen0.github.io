@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Spring," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,20 +79,19 @@
 
 
 
-<meta name="description" content="1. IocIOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制并且对象之间的依赖关系也交给容器来管理。 优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。   2. Ioc和DIDI 依赖注入，指得是容器动态的将依赖">
-<meta name="keywords" content="Spring">
+<meta name="description" content="之后总结会尽量使用思维导图，更好的体现知识间关系。    Inversion of Control （控制反转），一般分为俩种类型：依赖注入和依赖查找一般使用依赖注入（Dependency Injection）方式来实现控制反转。 DI注入方式 接口注入 构造器注入 Setter方式注入    接口注入Spring并不支持，基本上不会用到。一般是类之间强联系才用构造器方式进行注入，而弱联系推荐使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spring学习笔记（2）--IOC基础和基本原理">
-<meta property="og:url" content="http://yoursite.com/2017/10/24/Spring学习笔记（2）-IOC基础/index.html">
+<meta property="og:title" content="Spring学习笔记（3）-- DI基础和配置">
+<meta property="og:url" content="http://yoursite.com/2017/11/04/DI基础和配置/index.html">
 <meta property="og:site_name" content="lbw`s Blog">
-<meta property="og:description" content="1. IocIOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制并且对象之间的依赖关系也交给容器来管理。 优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。   2. Ioc和DIDI 依赖注入，指得是容器动态的将依赖">
+<meta property="og:description" content="之后总结会尽量使用思维导图，更好的体现知识间关系。    Inversion of Control （控制反转），一般分为俩种类型：依赖注入和依赖查找一般使用依赖注入（Dependency Injection）方式来实现控制反转。 DI注入方式 接口注入 构造器注入 Setter方式注入    接口注入Spring并不支持，基本上不会用到。一般是类之间强联系才用构造器方式进行注入，而弱联系推荐使用">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_02BeanFactory.png">
-<meta property="og:updated_time" content="2017-10-26T08:06:28.140Z">
+<meta property="og:image" content="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_03DImind.png">
+<meta property="og:updated_time" content="2017-11-04T12:13:16.662Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spring学习笔记（2）--IOC基础和基本原理">
-<meta name="twitter:description" content="1. IocIOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制并且对象之间的依赖关系也交给容器来管理。 优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。   2. Ioc和DIDI 依赖注入，指得是容器动态的将依赖">
-<meta name="twitter:image" content="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_02BeanFactory.png">
+<meta name="twitter:title" content="Spring学习笔记（3）-- DI基础和配置">
+<meta name="twitter:description" content="之后总结会尽量使用思维导图，更好的体现知识间关系。    Inversion of Control （控制反转），一般分为俩种类型：依赖注入和依赖查找一般使用依赖注入（Dependency Injection）方式来实现控制反转。 DI注入方式 接口注入 构造器注入 Setter方式注入    接口注入Spring并不支持，基本上不会用到。一般是类之间强联系才用构造器方式进行注入，而弱联系推荐使用">
+<meta name="twitter:image" content="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_03DImind.png">
 
 
 
@@ -122,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/10/24/Spring学习笔记（2）-IOC基础/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/11/04/DI基础和配置/"/>
 
 
 
 
 
-  <title>Spring学习笔记（2）--IOC基础和基本原理 | lbw`s Blog</title>
+  <title>Spring学习笔记（3）-- DI基础和配置 | lbw`s Blog</title>
   
 
 
@@ -265,7 +264,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/10/24/Spring学习笔记（2）-IOC基础/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/04/DI基础和配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lbw">
@@ -282,7 +281,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Spring学习笔记（2）--IOC基础和基本原理</h1>
+          <h1 class="post-title" itemprop="name headline">Spring学习笔记（3）-- DI基础和配置</h1>
         
 
         <div class="post-meta">
@@ -294,8 +293,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-10-24T11:27:40+08:00">
-                2017-10-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-04T19:28:19+08:00">
+                2017-11-04
               </time>
             
 
@@ -332,13 +331,28 @@
       
 
       
-        <h3 id="1-Ioc"><a href="#1-Ioc" class="headerlink" title="1. Ioc"></a>1. Ioc</h3><p>IOC (Inversion of control)是一种设计思想，在Java开发中，意味着将对象交给容器控制<br>并且对象之间的依赖关系也交给容器来管理。</p>
-<p>优势：解耦，传统方式都是在类的内部创建对象，使得对象于对象间的耦合程度较高，不利于测试。而控制反转后的对象都是经过容器来创建，需要的时候注入的，而这一切都是在框架内部完成的。  </p>
-<h3 id="2-Ioc和DI"><a href="#2-Ioc和DI" class="headerlink" title="2. Ioc和DI"></a>2. Ioc和DI</h3><p>DI 依赖注入，指得是容器动态的将依赖关系注入到组件中属于IOC容器的功能。</p>
-<h3 id="3-详解Ioc容器"><a href="#3-详解Ioc容器" class="headerlink" title="3. 详解Ioc容器"></a>3. 详解Ioc容器</h3><a id="more"></a>
-<p>Spring Ioc容器的代表的是org.springframework.beans包中的BeanFactory接口，提供了最基本功能<br>而实际开发使用的是org.springframework.context包下的ApplicationContext接口，他在基础之上扩展了功能用于企业级应用。ApplicationContext完全继承BeanFactory，因而BeanFactory所具有的语义也适用于ApplicationContext。<br><img src="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_02BeanFactory.png" alt="">  </p>
-<h4 id="3-1-根据不同路径来加载配置文件，并初始化容器"><a href="#3-1-根据不同路径来加载配置文件，并初始化容器" class="headerlink" title="3.1 根据不同路径来加载配置文件，并初始化容器"></a>3.1 根据不同路径来加载配置文件，并初始化容器</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testClassPathXmlApplicationContext</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//1.准备配置文件，从当前类加载路径中获取配置文件</span></div><div class="line">        <span class="comment">//2.初始化容器</span></div><div class="line">        BeanFactory beanFactory = <span class="keyword">new</span> ClassPathXmlApplicationContext(<span class="string">"chapter2/classpath.xml"</span>);</div><div class="line">        <span class="comment">//2、从容器中获取Bean</span></div><div class="line">        HelloApi helloApi = beanFactory.getBean(<span class="string">"hello"</span>, HelloApi.class);</div><div class="line">        <span class="comment">//3、执行业务逻辑</span></div><div class="line">        helloApi.sayHello();</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    <span class="meta">@Test</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFileSystemApplicationContext</span><span class="params">()</span> </span>&#123;</div><div class="line">        <span class="comment">//1.准备配置文件，从文件系统获取配置文件，默认是相对路径，可以指定绝对路径</span></div><div class="line">        <span class="comment">//2.初始化容器</span></div><div class="line">        BeanFactory beanFactory = <span class="keyword">new</span> FileSystemXmlApplicationContext(<span class="string">"fileSystemConfig.xml"</span>);</div><div class="line">        <span class="comment">//2、从容器中获取Bean</span></div><div class="line">        HelloApi helloApi = beanFactory.getBean(<span class="string">"hello"</span>, HelloApi.class);</div><div class="line">        <span class="comment">//3、执行业务逻辑</span></div><div class="line">        helloApi.sayHello();</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>其中，值得注意的是<br>类加载路径指的是webapp下的<strong>classes文件夹</strong>，存放编译后的文件<br>文件系统路径指的是<strong>项目的根目录</strong></p>
+        <p>之后总结会尽量使用思维导图，更好的体现知识间关系。</p>
+<p><img src="http://oxwv1c6nl.bkt.clouddn.com/spring/artical_03DImind.png" alt="DImind">  </p>
+<p>Inversion of Control （控制反转），一般分为俩种类型：<strong>依赖注入和依赖查找</strong><br>一般使用依赖注入（Dependency Injection）方式来实现控制反转。</p>
+<h4 id="DI注入方式"><a href="#DI注入方式" class="headerlink" title="DI注入方式"></a>DI注入方式</h4><ol>
+<li>接口注入</li>
+<li>构造器注入</li>
+<li>Setter方式注入  </li>
+</ol>
+<p>接口注入Spring并不支持，基本上不会用到。<br>一般是类之间强联系才用构造器方式进行注入，而弱联系推荐使用的setter方式进行注入。</p>
+<h4 id="Spring配置元数据的方式"><a href="#Spring配置元数据的方式" class="headerlink" title="Spring配置元数据的方式"></a>Spring配置元数据的方式</h4><ol>
+<li>基于XML配置文件</li>
+<li>基于注解配置</li>
+<li>自动装配</li>
+</ol>
+<p>自动装配的方式官方推荐，可以大量减少代码量，但是在引入第三方服务的时候会有很大局限性。<br>注解装配，在类中遍布很多地方，会与源代码耦合。<br>XML方式，清晰的结构展示。<br>有必要的话，可以选择多种配置方法混合使用。</p>
+<h4 id="关于自动装配"><a href="#关于自动装配" class="headerlink" title="关于自动装配"></a>关于自动装配</h4><p>Spring从俩个角度实现自动化装配</p>
+<ul>
+<li>组件扫描（component scanning）:Spring会自动发现应用上下文创建的bean </li>
+<li>自动装配（autowiring）:Spring自动满足bean之间的依赖</li>
+</ul>
+<h5 id="开启组件扫描"><a href="#开启组件扫描" class="headerlink" title="开启组件扫描"></a>开启组件扫描</h5><p><code>&lt;context:compent-scan base-package=&quot;test&quot;</code>/&gt; 扫描基础包为test的组件</p>
+<h5 id="使用-autowired注解"><a href="#使用-autowired注解" class="headerlink" title="使用@autowired注解"></a>使用@autowired注解</h5><p>默认自动装配是会自动装配接口的实现类，但是同一个接口有多个实现类的话，就会抛出异常。<br>可以使用primary属性来限制自动装配结果。<br>也可以使用限定符</p>
 
       
     </div>
@@ -354,12 +368,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/Spring/" rel="tag"><i class="fa fa-tag"></i> Spring</a>
-          
-        </div>
-      
 
       
       
@@ -369,8 +377,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/24/Spring学习笔记（1）-Spring概述/" rel="next" title="Spring学习笔记（1）--Spring概述">
-                <i class="fa fa-chevron-left"></i> Spring学习笔记（1）--Spring概述
+              <a href="/2017/10/24/Spring学习笔记（2）-IOC基础/" rel="next" title="Spring学习笔记（2）--IOC基础和基本原理">
+                <i class="fa fa-chevron-left"></i> Spring学习笔记（2）--IOC基础和基本原理
               </a>
             
           </div>
@@ -378,10 +386,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/04/DI基础和配置/" rel="prev" title="Spring学习笔记（3）-- DI基础和配置">
-                Spring学习笔记（3）-- DI基础和配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -567,7 +571,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-Ioc"><span class="nav-number">1.</span> <span class="nav-text">1. Ioc</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-Ioc和DI"><span class="nav-number">2.</span> <span class="nav-text">2. Ioc和DI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-详解Ioc容器"><span class="nav-number">3.</span> <span class="nav-text">3. 详解Ioc容器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-根据不同路径来加载配置文件，并初始化容器"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 根据不同路径来加载配置文件，并初始化容器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#DI注入方式"><span class="nav-number">1.</span> <span class="nav-text">DI注入方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring配置元数据的方式"><span class="nav-number">2.</span> <span class="nav-text">Spring配置元数据的方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关于自动装配"><span class="nav-number">3.</span> <span class="nav-text">关于自动装配</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#开启组件扫描"><span class="nav-number">3.1.</span> <span class="nav-text">开启组件扫描</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#使用-autowired注解"><span class="nav-number">3.2.</span> <span class="nav-text">使用@autowired注解</span></a></li></ol></li></ol></div>
             
 
           </div>
