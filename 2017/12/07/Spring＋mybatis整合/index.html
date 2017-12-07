@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="排序算法," />
+  <meta name="keywords" content="mybatis," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="前几天刚学了几种简单的排序算法，总结一下，都是面试经常会涉及到的。  选择排序12345678910111213141516171819202122232425262728293031323334public class SelectorSort &amp;#123;    private SelectorSort() &amp;#123;            &amp;#125;    //从小到大排序&amp;#123;">
-<meta name="keywords" content="排序算法">
+<meta name="description" content="整合方式俩种不同的整合方式 ：原始dao方式，和官方推荐的mapper接口方式。相比原始dao的方式，我更偏向于使用mapper接口。 有俩个理由：  约定大于配置的方式，通过对框架使用的一定限制来提高程序的健壮性，减少大量代码。 面向接口式编程，dao层就是接口层，而dao层的实现由框架通过代理来创建。  整合思路完全去掉SqlMapConfig.xml文件，把所有配置放在Spring中。  配">
+<meta name="keywords" content="mybatis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="选择排序">
-<meta property="og:url" content="http://yoursite.com/2017/11/10/选择排序/index.html">
+<meta property="og:title" content="Spring＋mybatis整合">
+<meta property="og:url" content="http://yoursite.com/2017/12/07/Spring＋mybatis整合/index.html">
 <meta property="og:site_name" content="lbw`s Blog">
-<meta property="og:description" content="前几天刚学了几种简单的排序算法，总结一下，都是面试经常会涉及到的。  选择排序12345678910111213141516171819202122232425262728293031323334public class SelectorSort &amp;#123;    private SelectorSort() &amp;#123;            &amp;#125;    //从小到大排序&amp;#123;">
+<meta property="og:description" content="整合方式俩种不同的整合方式 ：原始dao方式，和官方推荐的mapper接口方式。相比原始dao的方式，我更偏向于使用mapper接口。 有俩个理由：  约定大于配置的方式，通过对框架使用的一定限制来提高程序的健壮性，减少大量代码。 面向接口式编程，dao层就是接口层，而dao层的实现由框架通过代理来创建。  整合思路完全去掉SqlMapConfig.xml文件，把所有配置放在Spring中。  配">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-11-10T02:57:34.797Z">
+<meta property="og:updated_time" content="2017-12-07T05:51:34.715Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="选择排序">
-<meta name="twitter:description" content="前几天刚学了几种简单的排序算法，总结一下，都是面试经常会涉及到的。  选择排序12345678910111213141516171819202122232425262728293031323334public class SelectorSort &amp;#123;    private SelectorSort() &amp;#123;            &amp;#125;    //从小到大排序&amp;#123;">
+<meta name="twitter:title" content="Spring＋mybatis整合">
+<meta name="twitter:description" content="整合方式俩种不同的整合方式 ：原始dao方式，和官方推荐的mapper接口方式。相比原始dao的方式，我更偏向于使用mapper接口。 有俩个理由：  约定大于配置的方式，通过对框架使用的一定限制来提高程序的健壮性，减少大量代码。 面向接口式编程，dao层就是接口层，而dao层的实现由框架通过代理来创建。  整合思路完全去掉SqlMapConfig.xml文件，把所有配置放在Spring中。  配">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/10/选择排序/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/07/Spring＋mybatis整合/"/>
 
 
 
 
 
-  <title>选择排序 | lbw`s Blog</title>
+  <title>Spring＋mybatis整合 | lbw`s Blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/10/选择排序/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/07/Spring＋mybatis整合/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="lbw">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">选择排序</h1>
+          <h1 class="post-title" itemprop="name headline">Spring＋mybatis整合</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-10T09:54:42+08:00">
-                2017-11-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-07T13:48:11+08:00">
+                2017-12-07
               </time>
             
 
@@ -302,28 +302,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/算法/" itemprop="url" rel="index">
-                    <span itemprop="name">算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -352,30 +330,26 @@
       
 
       
-        <blockquote>
-<p><strong>前几天刚学了几种简单的排序算法，总结一下，都是面试经常会涉及到的。</strong></p>
-</blockquote>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SelectorSort</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="function"><span class="keyword">private</span> <span class="title">SelectorSort</span><span class="params">()</span> </span>&#123;</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">    <span class="comment">//从小到大排序&#123;1,5,3,2,4&#125;</span></div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">sort</span><span class="params">(<span class="keyword">int</span>[] arr)</span> </span>&#123;</div><div class="line">        <span class="comment">//5</span></div><div class="line">        <span class="keyword">int</span> len = arr.length;</div><div class="line">        <span class="comment">//5个数需要比较4次 每次确定一个最小值</span></div><div class="line">        <span class="keyword">for</span>( <span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len-<span class="number">1</span> ; i++) &#123;</div><div class="line">            <span class="keyword">int</span> minIndex = i;</div><div class="line">            <span class="comment">//每个数和[j,len)进行比较</span></div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> j = i+<span class="number">1</span>;j&lt;len ;j++) &#123;</div><div class="line">                <span class="comment">//不符合 小-&gt;大 交换位置</span></div><div class="line">                <span class="keyword">if</span> (arr[minIndex]&gt;arr[j]) &#123;</div><div class="line">                    minIndex = j;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            swap(arr,minIndex,i);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">swap</span><span class="params">(<span class="keyword">int</span>[] arr,<span class="keyword">int</span> num1,<span class="keyword">int</span> num2)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span> temp = arr[num1];</div><div class="line">        arr[num1] = arr[num2];</div><div class="line">        arr[num2] = temp;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">        <span class="keyword">int</span>[] arr  = &#123;<span class="number">1</span>,<span class="number">5</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">4</span>&#125;;</div><div class="line">        sort(arr);</div><div class="line">    &#125;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+        <h3 id="整合方式"><a href="#整合方式" class="headerlink" title="整合方式"></a>整合方式</h3><p>俩种不同的整合方式 ：原始dao方式，和官方推荐的mapper接口方式。<br>相比原始dao的方式，我更偏向于使用mapper接口。</p>
+<p>有俩个理由：</p>
+<ul>
+<li>约定大于配置的方式，通过对框架使用的一定限制来提高程序的健壮性，减少大量代码。</li>
+<li>面向接口式编程，dao层就是接口层，而dao层的实现由框架通过代理来创建。</li>
+</ul>
+<h3 id="整合思路"><a href="#整合思路" class="headerlink" title="整合思路"></a>整合思路</h3><p>完全去掉SqlMapConfig.xml文件，把所有配置放在Spring中。</p>
+<ol>
+<li>配置数据源（JDBC，c3p0等）</li>
+<li>配置SqlSessionFactory<ul>
+<li>引入数据源</li>
+<li>配置类的别名为批量别名定义</li>
+<li>配置映射类型</li>
+</ul>
+</li>
+<li>配置批量加载mapper</li>
+</ol>
 <a id="more"></a>
-<p>输入–&gt; [1,5,3,2,4]</p>
-<p>第一次 1 和 [5,3,2,4]分别比较，没有比1小的，确定最小值为1，不做交换  </p>
-<blockquote>
-<p><strong>[1,5,3,2,4]</strong></p>
-</blockquote>
-<p>第二次<br>    由于已经确定1为最小值<br>    比较5和[3,2,4]，确定最小值为2  交换5和2</p>
-<blockquote>
-<p><strong>[1,2,3,5,4]</strong></p>
-</blockquote>
-<p>第三次<br>    [1,2]已确定为最小值<br>    比较3和[5,4],没有比3小的，确定最小值为3，不做交换</p>
-<blockquote>
-<p><strong>[1,2,3,5,4]</strong></p>
-</blockquote>
-<p>第四次<br>    [1,2,3]已确定为最小值<br>    比较5和[4]，确定最小值为4，交换5和4</p>
-<blockquote>
-<p><strong>[1,2,3,4,5]</strong></p>
-</blockquote>
-<p>结束输出 –&gt; [1,2,3,4,5]</p>
-
+<h3 id="整合过程"><a href="#整合过程" class="headerlink" title="整合过程"></a>整合过程</h3><p>dao层只留下接口，而sql语句都在mapper.xml中<br>在mapper.xml中所有<code>&lt;mapper&gt;</code>的<code>namespace</code>属性的值都改为对应接口的全类名</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</div><div class="line"><span class="tag">&lt;<span class="name">beans</span> <span class="attr">xmlns</span>=<span class="string">"http://www.springframework.org/schema/beans"</span></span></div><div class="line"><span class="tag">       <span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="attr">xmlns:p</span>=<span class="string">"http://www.springframework.org/schema/p"</span></span></div><div class="line"><span class="tag">       <span class="attr">xmlns:aop</span>=<span class="string">"http://www.springframework.org/schema/aop"</span> <span class="attr">xmlns:context</span>=<span class="string">"http://www.springframework.org/schema/context"</span></span></div><div class="line"><span class="tag">       <span class="attr">xsi:schemaLocation</span>=<span class="string">"http://www.springframework.org/schema/beans</span></span></div><div class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/beans/spring-beans.xsd</span></span></div><div class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/context</span></span></div><div class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/context/spring-context-4.3.xsd</span></span></div><div class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/aop</span></span></div><div class="line"><span class="tag"><span class="string">        http://www.springframework.org/schema/aop/spring-aop-4.3.xsd"</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 使用属性占位符 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">context:property-placeholder</span> <span class="attr">location</span>=<span class="string">"classpath:db.properties"</span>/&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!--1.创建数据源，并配置c3p0相关属性--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"dataSource"</span> <span class="attr">class</span>=<span class="string">"com.mchange.v2.c3p0.ComboPooledDataSource"</span> <span class="attr">destroy-method</span>=<span class="string">"close"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"driverClass"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.driver&#125;"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"jdbcUrl"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.url&#125;"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"user"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.username&#125;"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"password"</span> <span class="attr">value</span>=<span class="string">"$&#123;jdbc.password&#125;"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"acquireIncrement"</span> <span class="attr">value</span>=<span class="string">"5"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"initialPoolSize"</span> <span class="attr">value</span>=<span class="string">"10"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"minPoolSize"</span> <span class="attr">value</span>=<span class="string">"5"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"maxPoolSize"</span> <span class="attr">value</span>=<span class="string">"20"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 2.创建sql工厂--&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">id</span>=<span class="string">"sqlSessionFactory"</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.SqlSessionFactoryBean"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 引入数据源 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dataSource"</span> <span class="attr">ref</span>=<span class="string">"dataSource"</span>/&gt;</span></div><div class="line">       <span class="comment">&lt;!-- 配置该包下所有类的别名， com.lbw.SpringMybatis.po.User 在Mapper中别名为user或User --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"typeAliasesPackage"</span> <span class="attr">value</span>=<span class="string">"com.lbw.SpringMybatis.po"</span>/&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 配置映射器，引入所有mapper.xml文件 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"mapperLocations"</span> <span class="attr">value</span>=<span class="string">"classpath:mapper/*Mapper.xml"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line">    <span class="comment">&lt;!-- 配置批量加载mapper，通过代理模式生成mapper对象 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">bean</span> <span class="attr">class</span>=<span class="string">"org.mybatis.spring.mapper.MapperScannerConfigurer"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"basePackage"</span> <span class="attr">value</span>=<span class="string">"com.lbw.SpringMybatis.dao"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"sqlSessionFactoryBeanName"</span> <span class="attr">value</span>=<span class="string">"sqlSessionFactory"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">bean</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">beans</span>&gt;</span></div></pre></td></tr></table></figure>
       
     </div>
     
@@ -392,7 +366,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/排序算法/" rel="tag"><i class="fa fa-tag"></i> 排序算法</a>
+            <a href="/tags/mybatis/" rel="tag"><i class="fa fa-tag"></i> mybatis</a>
           
         </div>
       
@@ -405,8 +379,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/11/04/Spring学习笔记（3） -DI基础和配置/" rel="next" title="Spring学习笔记（3）-- DI基础和配置">
-                <i class="fa fa-chevron-left"></i> Spring学习笔记（3）-- DI基础和配置
+              <a href="/2017/11/15/Maven学习总结/" rel="next" title="Maven学习总结">
+                <i class="fa fa-chevron-left"></i> Maven学习总结
               </a>
             
           </div>
@@ -414,10 +388,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/11/15/Maven学习总结/" rel="prev" title="Maven学习总结">
-                Maven学习总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -603,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序"><span class="nav-number">1.</span> <span class="nav-text">选择排序</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#整合方式"><span class="nav-number">1.</span> <span class="nav-text">整合方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整合思路"><span class="nav-number">2.</span> <span class="nav-text">整合思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整合过程"><span class="nav-number">3.</span> <span class="nav-text">整合过程</span></a></li></ol></div>
             
 
           </div>
